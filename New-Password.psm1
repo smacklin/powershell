@@ -1,4 +1,4 @@
-﻿function New-RandomPassword {
+﻿function New-Password {
 <#
 .Synopsis
    Generates a random password 

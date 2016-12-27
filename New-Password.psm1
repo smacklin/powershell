@@ -7,7 +7,7 @@
 .EXAMPLE
    New-Password -Length 10 
 .EXAMPLE
-   New-Password -Length 10 -ExcludeNonAlphabetic
+   New-Password -Length 10 -ExcludeNonAlphabetic $true
 .EXAMPLE
    New-Password 8
 #>

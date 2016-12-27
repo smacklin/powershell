@@ -5,11 +5,11 @@
 .DESCRIPTION
    This function can be used to generate passwords for AD Accounts or anything requiring a password
 .EXAMPLE
-   New-RandomPassword -Length 10 
+   New-Password -Length 10 
 .EXAMPLE
-   New-RandomPassword -Length 10 -ExcludeNonAlphabetic
+   New-Password -Length 10 -ExcludeNonAlphabetic
 .EXAMPLE
-   New-RandomPassword 8
+   New-Password 8
 #>
     [cmdletbinding()]
     param (

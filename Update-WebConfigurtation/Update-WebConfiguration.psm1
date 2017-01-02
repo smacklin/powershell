@@ -1,0 +1,53 @@
+﻿function Update-WebConfiguration {
+<#
+.Synopsis
+   
+.DESCRIPTION
+   
+.EXAMPLE
+   
+.EXAMPLE
+   
+.EXAMPLE
+   
+#>
+    [cmdletbinding()]
+    param (
+        [Parameter(Mandatory)]
+        [ValidateScript({Test-Path $_ })]
+        [string]$Path,
+
+        [Parameter(Mandatory)]
+        [string]$Key,
+
+        [Parameter(Mandatory)]
+        [string]$Value        
+    )
+
+    BEGIN 
+    {
+        
+    }
+
+    PROCESS 
+    {
+       $webConfig = $Path
+       $xmlDoc = (Get-Content $webConfig) -as [Xml]
+       $obj = $xmlDoc.configuration.appSettings.add | where {$_.Key -eq $Key }
+       $obj.value = $Value
+       $xmlDoc.Save($webConfig)
+    }
+
+    END 
+    {
+
+    }
+}
+
+
+
+
+
+
+
+
